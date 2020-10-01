@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Bode Style */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: hsl(240, 78%, 98%);
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+}
+body::after {
+  position: absolute;
+  content: "";
+  width: 26%;
+  height: 80%;
+  top: 0;
+  right: 0;  background-image: url('/..images/bg-top.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top right;
+  z-index: -1;
+}
+body::before {
+  position: absolute;
+  content: "";
+  width: 26%;
+  height: 40%;
+  bottom: 0;
+  left: 0;
+  background-image: url('../images/bg-bottom.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  z-index: -1;
+}
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: hsl(233, 13%, 49%);
+}
+
+/* Check method style */
+.check-method {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  .check-method span {
+    color: hsl(234, 14%, 74%);
+    font-size: 15px;
+  }
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    position: relative;
+  }
+  label {
+    position: relative;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 55px;
+    height: 30px;
+    background-image: linear-gradient(
+      to right,
+      hsl(236, 72%, 79%),
+      hsl(237, 63%, 64%)
+      );
+      display: block;
+      border-radius: 15px;
+      position: relative;
+      margin: 0 1.5rem;
+    }
+    label:after {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 23px;
+      height: 23px;
+      background: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    
+    input:checked + label {
+      background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+    }
+    input:checked + label:after {
+      left: calc(100% - 4px);
+      transform: translateX(-100%);
+    }
+    
+    label:active:after {
+      width: 20px;
+    }
+    
+    /* card styles */
+    .card-pricing {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .card-item {
+      padding: 3rem 1.5rem;
+      background-color: white;
+      border-radius: 10px;
+      text-align: center;
+      min-width: 280px;
+      box-shadow: 0px 3px 10px 0px hsl(240, 17%, 93%);
+    }
+    .card-item:nth-of-type(2) {
+      transform: scale(1.1);
+      background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      color: white;
+    }
+    
+    .title-card {
+      color: hsl(233, 13%, 49%);
+      font-size: 15px;
+      margin-bottom: 1rem;
+    }
+    .price-card {
+      font-size: 3rem;
+      color: hsl(232, 13%, 33%);
+      margin-bottom: 1rem;
+    }
+    .price-card span {
+      font-size: 2rem;
+    }
+    .desc-card {
+      margin-bottom: 1.5rem;
+    }
+    .desc-card li {
+      list-style: none;
+      font-size: 11px;
+      color: hsl(233, 13%, 49%);
+      border-top: 0.5px solid hsl(240, 17%, 93%);
+      padding: 0.75rem;
+    }
+    .desc-card li:last-of-type {
+      border-bottom: 0.5px solid hsl(240, 17%, 93%);
+    }
+    
+    .learn-more {
+      display: block;
+      text-decoration: none;
+      padding: 0.75rem 0.5rem;
+      background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      border-radius: 3px;
+      color: white;
+      font-size: 11px;
+      text-transform: uppercase;
+      transition: all 0.35s ease;
+      border: 1px solid transparent;
+    }
+    .learn-more:hover {
+      background-image: none;
+      background-color: white;
+      color: hsl(237, 63%, 64%);
+      border: 1px solid hsl(237, 63%, 64%);
+    }
+    .card-item:nth-of-type(2) .title-card,
+    .card-item:nth-of-type(2) .price-card,
+    .card-item:nth-of-type(2) .desc-card li,
+    .card-item:nth-of-type(2) .desc-card li:last-of-type {
+      color: white;
+    }
+    .card-item:nth-of-type(2) .learn-more {
+      background-color: white;
+      border: 1px solid transparent;
+      color: hsl(237, 63%, 64%);
+      background-image: none;
+    }
+    .card-item:nth-of-type(2) .learn-more:hover {
+      color: white;
+      background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%)
+      );
+      border: 1px solid white;
+    }
+    
+    @media screen and (max-width: 930px) {
+      body {
+        height: auto;
+    }
+    body::after {
+      width: 48%;
+      background-size: contain;
+      background-position: top;
+    }
+    .card-pricing {
+      flex-direction: column;
+    }
+    .card-item {
+      margin-bottom: 1.5rem;
+    }
+    .card-pricing .card-item:nth-of-type(2) {
+      transform: scale(1);
+    }
+    .container {
+      margin: 3rem 0;
+    }
+  }
+                     
